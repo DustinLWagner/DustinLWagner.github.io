@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/*html {}
+
+.hide-scroll::-webkit-scrollbar {
+    scrollbar-width: none;
+    display: none;
+}*/
+
+
+/*---------------------BODY------------------------*/
+body {
+    font-family: 'Permanent Marker', cursive;
+    background: black;
+    background-image: url(/img/earthlights1.png);
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+
+/*---------------------NAV BAR------------------------*/
+header {
+    height: auto;
+    padding-bottom: 5%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+.nav-bar a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 30%;
+    color: aliceblue;
+    font-weight: 0;
+    font-size: large;
+    transition: ease all 0.5s;
+}
+
+.nav-bar a:hover {
+    background-color: #ffffff00;
+    transform: scale(1.5);
+
+}
+
+.nav-bar li {
+    display: inline-flex;
+    justify-content: center;
+    width: 16%;
+
+}
+
+/* ASAP !FIX THESE BELOW FOR RESPONSIVE VIEWS! ASAP*/
+
+/*--------------------ITEM ROWS-------------------------*/
+
+.proj-box {
+    display: flex;
+    align-items: center;
+    transition: ease all 0.5s;
+    width: 20%;
+    height: 235px;
+
+}
+
+.proj-box img {
+    width: 100%;
+}
+
+.proj-box:hover {
+    cursor: pointer;
+    transform: scale(1.6);
+}
+
+.proj-box a {
+    text-decoration: none;
+}
+
+.proj-box h1 {
+    color: fuchsia;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.proj-box-cont {
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.item-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    height: 100%;
+}
+
+/*---------  PROJ-BOX ----------*/
+.proj-box-0 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-3 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-4 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-5 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-6 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-7 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proj-box-8 {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*----------------------Footer-----------------------*/
+/*footer {}
+/*----------------------About-----------------------*/
+.about-text {
+    word-wrap: normal;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    font-size: large;
+}
+
+/*--------------------Contact Page and Input-------------------------*/
+
+.contact-form-text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* .contact-input {}
+
+/*---------------------Project Info------------------------*/
+
+.proj-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.proj-info-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/*---------------------Project 0------------------------*/
+
+#coinBox {
+    display: flex;
+    justify-content: center;
+
+}
+
+#revealCoin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+}

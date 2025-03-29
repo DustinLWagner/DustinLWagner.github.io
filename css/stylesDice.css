@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/*html {}*/
+/*---------------------HEADER------------------------*/
+header {
+    height: auto;
+    padding-bottom: 5%;
+}
+
+/*---------------------NAV BAR------------------------*/
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+.nav-bar a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: larger;
+    width: 30%;
+    color: rgb(255, 255, 255);
+    transition: ease all 0.5s;
+}
+
+.nav-bar a:hover {
+    background-color: #ffffff00;
+    transform: scale(1.5);
+}
+
+.nav-bar li {
+    display: inline-flex;
+    justify-content: center;
+    width: 16%;
+}
+
+/*---------------------BODY------------------------*/
+body {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    background: rgb(0, 0, 0);
+    background-image: url(/img/89_Bridge\ of\ the\ Deep\ 1920x2048_grid.png);
+    background-size: 100%;
+    color: rgb(255, 255, 255);
+}
+
+/*---------------------------------------------*/
+
+.proj-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    min-height: 20;
+}
+
+#diceResultBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+}
+
+#belowDiceResult {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: max-content;
+}
+
+/*----------------------DICE-----------------------*/
+
+.diceBox {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    min-width: 50vw;
+
+}
+
+.diceBox img {
+    display: flex;
+    justify-content: center;
+    transform: scale(.8);
+    transition: ease all 0.5s;
+}
+
+.diceBox img:hover {
+    transform: scale(1.2);
+
+}
+
+/*------Roll Animation----------*/
+.rotateDice {
+    animation: image4 2s ease-in-out forwards;
+}
+
+@keyframes image4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(2160deg);
+    }
+}
+
+
+
+/*
+.rotateable {
+    transition: all 100ms;
+}
+*/
