@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US" class="hide-scroll">
+
+<head>
+
+    <title> Roll The Dice </title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Stuff,Things">
+    <meta name="description" content="Stuff and Things">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <styles>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+        /*html {}*/
+        /*---------------------HEADER------------------------*/
+        header {
+        height: auto;
+        padding-bottom: 5%;
+        }
+
+        /*---------------------NAV BAR------------------------*/
+        .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        }
+
+        .nav-bar {
+        width: 100%;
+        }
+
+        .nav-bar a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: larger;
+        width: 30%;
+        color: rgb(255, 255, 255);
+        transition: ease all 0.5s;
+        }
+
+        .nav-bar a:hover {
+        background-color: #ffffff00;
+        transform: scale(1.5);
+        }
+
+        .nav-bar li {
+        display: inline-flex;
+        justify-content: center;
+        width: 16%;
+        }
+
+        /*---------------------BODY------------------------*/
+        body {
+        font-family: "MedievalSharp", cursive;
+        font-weight: 400;
+        background: rgb(0, 0, 0);
+        background-image: url(/img/89_Bridge\ of\ the\ Deep\ 1920x2048_grid.png);
+        background-size: 100%;
+        color: rgb(255, 255, 255);
+        }
+
+        /*---------------------------------------------*/
+
+        .proj-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .mainContainer {
+        display: flex;
+        justify-content: center;
+        min-height: 20;
+        }
+
+        #diceResultBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 10vh;
+        }
+
+        #belowDiceResult {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: max-content;
+        }
+
+        /*----------------------DICE-----------------------*/
+
+        .diceBox {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+        min-height: 20vh;
+        min-width: 50vw;
+
+        }
+
+        .diceBox img {
+        display: flex;
+        justify-content: center;
+        transform: scale(.8);
+        transition: ease all 0.5s;
+        }
+
+        .diceBox img:hover {
+        transform: scale(1.2);
+
+        }
+
+        /*------Roll Animation----------*/
+        .rotateDice {
+        animation: image4 2s ease-in-out forwards;
+        }
+
+        @keyframes image4 {
+        0% {
+        transform: rotate(0deg);
+        }
+
+        100% {
+        transform: rotate(2160deg);
+        }
+        }
+
+
+
+        /*
+        .rotateable {
+        transition: all 100ms;
+        }
+        */
+    </styles>
+
+    <script async>
+        //arrays to store dice ids and past rolls//
+        const diceIds = ["4", "6", "8", "10", "12", "20"];
+        var diceRolls = [];
+        //use forEach to add listenters and grab el Id for all dice and roll dice
+        diceIds.forEach(diceId => {
+            document.getElementById(diceId).addEventListener("click", function () {
+                var randInt = Math.floor(Math.random() * diceId + 1);
+                document.getElementById(diceId).classList.add('rotateDice');
+                //logs diceId to console with "you rolled randInt'
+                console.log(window.event.target.id);
+                console.log("You rolled " + randInt);
+                //time outs to reset the dice, display dice result, and remove it
+                setTimeout(() => {
+                    document.getElementById(diceId).classList.remove('rotateDice');
+                }, 3000);
+                setTimeout(() => {
+                    diceResult.innerText = ("You rolled " + randInt + " on a D" + diceId);
+                    //store dice result in dice roll array as its created and before it is cleared
+                    diceRolls.push(" " + randInt + " on a D" + diceId);
+                    //log dice rolls array
+                    console.log(diceRolls);
+                    diceRollsBox.innerText = (diceRolls);
+                }, 2000);
+                setTimeout(() => {
+                    diceResult.innerText = (" ");
+                }, 5000);
+
+            });
+        });
+
+        // add a reset diceRollsBox button to clear DiceRollsBox
+
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="/index.html"> Home </a></li>
+                <li><a href="/pages/projects.html"> Projects </a></li>
+                <li><a href="/pages/about.html"> About </a></li>
+                <li><a href="/pages/contact.html"> Contact </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="proj-title">
+        <h1> Roll The Dice </h1>
+    </div>
+
+
+    <div class="diceBox">
+        <img id="4" alt="D4" src="/img/diceD4.png">
+        <img id="6" alt="D6" src="/img/diceD6.png">
+        <img id="8" alt="D8" src="/img/diceD8.png">
+        <img id="10" alt="D10" src="/img/diceD10.png">
+        <img id="12" alt="D12" src="/img/diceD12.png">
+        <img id="20" alt="D20" src="/img/diceD20.png">
+    </div>
+
+    <div id="diceResultBox">
+        <h1 id="diceResult"> </h1>
+    </div>
+
+    <div id="belowDiceResult">
+        <p id="diceRollsBox"> </p>
+    </div>
+
+
+
+
+</body>
+
+</html>
