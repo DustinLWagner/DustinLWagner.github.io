@@ -25,18 +25,46 @@
         </nav>
     </header>
 
-    <div>
-        <div class="contact-form-text">
-            <div>
-                <h1>Contact Me</h1>
-            </div>
-            <div class="contact-input">
-                <input type="text">
-                <input type="submit" value="Submit">
-            </div>
 
+    <div class="contactFormContainer">
+        <div class="contactIntro">
+            <h1 class="contactIntro">Contact Me</h1>
         </div>
+
+        <form class="contactForm" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="0dd998b3-400e-4915-9a34-bde6e695290b" />
+            <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+            <input type="hidden" name="from_name" value="My Website" />
+
+            <div class="formGroupContainer">
+
+                <div class="formGroup">
+                    <label for="name" class="formLabel">Name</label>
+                    <input id="name" name="name" class="formInput" placeholder="Your Name" type="text" required />
+                </div>
+
+                <div class="formGroup">
+                    <label for="email" class="formLabel">Email</label>
+                    <input id="email" name="email" class="formInput" placeholder="Your Email" type="email" required>
+                </div>
+
+                <div class="formGroup">
+                    <label for="message" class="formLabel"> Message </label>
+                    <textarea id="message" name="message" class="formTextArea" placeholder="Your Message"
+                        required></textarea>
+                </div>
+
+                <button class="formSubmit" type="submit"> Send Message </button>
+
+
+            </div>
+            <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+
+        </form>
+
     </div>
+
 
     <div class="footer">
         <footer>
@@ -51,6 +79,21 @@
             </header>
         </footer>
     </div>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script>
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (e) {
+
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field")
+                return
+            }
+        });
+    </script>
 </body>
 
 
