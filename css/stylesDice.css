@@ -49,7 +49,8 @@ body {
     background-image: url(/img/89_Bridge\ of\ the\ Deep\ 1920x2048_gridWebP.webp);
     background-size: 100%;
     color: rgb(255, 255, 255);
-    min-height: 2010px;
+    min-height: max-content;
+    min-width: max-content;
 }
 
 /*---------------------------------------------*/
@@ -62,7 +63,7 @@ body {
 }
 
 .resetButton {
-    width: 10vw;
+    width: 65px;
     background-color: darkgray;
 }
 
