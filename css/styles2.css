@@ -12,7 +12,7 @@
 body {
     font-family: 'Permanent Marker', cursive;
     background: black;
-    background-image: url(/img/earthlights1.png);
+    background-image: url(/img/earthlights2.png);
     background-repeat: no-repeat;
     color: white;
 
@@ -74,6 +74,10 @@ header {
 }
 
 .proj-box img {
+    width: 100%;
+}
+
+.proj-box video {
     width: 100%;
 }
 
