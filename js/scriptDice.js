@@ -15,11 +15,17 @@ diceIds.forEach(diceId => {
         }, 3000);
         setTimeout(() => {
             diceResult.innerText = ("You rolled " + randInt + " on a D" + diceId);
-            //store dice result in dice roll array as its created and before it is cleared
+
+            //create new li
+            var listItem = document.createElement("li");
+            listItem.textContent = "You Rolled " + randInt + " on a D" + diceId;
+
+            //append new li to ul
+            var diceRollsList = document.getElementById("diceRollsBox");
+            diceRollsList.appendChild(listItem);
+
             diceRolls.push(" " + randInt + " on a D" + diceId);
-            //log dice rolls array
-            console.log(diceRolls);
-            diceRollsBox.innerText = (diceRolls);
+
         }, 2000);
         setTimeout(() => {
             diceResult.innerText = (" ");

@@ -46,9 +46,10 @@ body {
     font-family: "MedievalSharp", cursive;
     font-weight: 400;
     background: rgb(0, 0, 0);
-    background-image: url(/img/89_Bridge\ of\ the\ Deep\ 1920x2048_grid.png);
+    background-image: url(/img/89_Bridge\ of\ the\ Deep\ 1920x2048_gridWebP.webp);
     background-size: 100%;
     color: rgb(255, 255, 255);
+    min-height: 2010px;
 }
 
 /*---------------------------------------------*/
@@ -76,7 +77,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: max-content;
+}
+
+#diceRollsBox {
+
+    max-width: 25vw;
+
 }
 
 /*----------------------DICE-----------------------*/
