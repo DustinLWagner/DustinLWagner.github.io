@@ -34,4 +34,8 @@ diceIds.forEach(diceId => {
     });
 });
 
-// add a reset diceRollsBox button to clear DiceRollsBox
+// Clear diceRollsBox by clicking resetButton 
+
+document.getElementById("resetButton").addEventListener("click", function () {
+    diceRollsBox.innerText = (" ")
+});

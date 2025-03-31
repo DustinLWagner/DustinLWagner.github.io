@@ -56,8 +56,14 @@ body {
 
 .proj-title {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.resetButton {
+    width: 10vw;
+    background-color: darkgray;
 }
 
 .mainContainer {
