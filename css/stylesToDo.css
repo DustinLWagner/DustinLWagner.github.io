@@ -66,9 +66,8 @@ header {
 
 .toDoContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: auto;
     background-color: #d3d3d3;
     min-height: 30vh;
@@ -78,15 +77,11 @@ header {
     border-radius: .5rem;
 }
 
-.toDoItems {
+.itemsList {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: center;
     margin: auto;
     padding: 5px 5px 5px;
-
-
     list-style: none;
     word-wrap: inherit;
 }
