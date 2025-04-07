@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/*html {}
+
+.hide-scroll::-webkit-scrollbar {
+    scrollbar-width: none;
+    display: none;
+}*/
+
+
+/*---------------------BODY------------------------*/
+body {
+    font-family: 'Permanent Marker', cursive;
+    background: black;
+    background-image: url(/img/earthlights2.webp);
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+
+/*---------------------NAV BAR------------------------*/
+header {
+    height: auto;
+    padding-bottom: 5%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+.nav-bar a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 30%;
+    color: aliceblue;
+    font-weight: 0;
+    font-size: large;
+    transition: ease all 0.5s;
+}
+
+.nav-bar a:hover {
+    background-color: #ffffff00;
+    transform: scale(1.5);
+
+}
+
+.nav-bar li {
+    display: inline-flex;
+    justify-content: center;
+    width: 16%;
+
+}
+
+.helloText {
+    word-wrap: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    min-height: 30rem;
+    font-size: large;
+}
+
+/*----------------------Footer-----------------------*/
+.footer {
+    height: auto;
+    padding-top: 90vh;
+}
