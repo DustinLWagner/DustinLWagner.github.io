@@ -15,8 +15,7 @@ document.getElementById("clear").addEventListener("click", function () {
     });
 
 });
-//create and add to do item *ADD PROMPT FOR ITEM NAME/DESCRIPTION
-
+//Pop Up for New List Item
 //Listen for New Button CLick open pop up and prompt user for new task
 document.querySelector("button[id=new]").addEventListener("click", function () {
 
@@ -44,9 +43,6 @@ document.querySelector("button[id=addNewButton]").addEventListener("click", func
 
 });
 
-
-
-
 //----------------------set up local storage------------------//
 
 //store li items in tasks
@@ -65,8 +61,6 @@ if (storedTasks === null) {
     console.log("has items")
     //if task exists iterate through and create list items for each
 };
-
-
 
 //When the user adds a task via the prompt, save that task in localStorage
 //Append the new task as a list item on the page.
