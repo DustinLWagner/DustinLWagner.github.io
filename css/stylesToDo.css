@@ -92,13 +92,21 @@ header {
     margin: auto;
     width: 400px;
     height: fit-content;
-    background-color: aqua;
+    background-color: #d3d3d3;
+    outline: solid #ad8fff;
     border-radius: .375rem;
     position: absolute;
-    top: 20%;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.5s, top 0.5s;
+}
 
+.open-popup {
+    visibility: visible;
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 #addNewTaskIMG {
@@ -117,7 +125,7 @@ header {
 
 }
 
-.formInput {
+.textAreaInput {
     display: flex;
     align-self: center;
     padding: 0.5rem;
@@ -129,6 +137,6 @@ header {
     line-height: 1.25rem;
 }
 
-.formInput::placeholder {
+.textAreaInput::placeholder {
     color: #9b9fa7;
 }

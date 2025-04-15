@@ -17,30 +17,36 @@ document.getElementById("clear").addEventListener("click", function () {
 });
 //create and add to do item *ADD PROMPT FOR ITEM NAME/DESCRIPTION
 
-
-
-
-//Listen for New Button CLick
+//Listen for New Button CLick open pop up and prompt user for new task
 document.querySelector("button[id=new]").addEventListener("click", function () {
-    //prompt user for new task
 
+    popup.classList.add("open-popup");
 
+});
 
-
-
-
-    let newTask = window.prompt("New Task");
+//listen for submit button and add task to list
+document.querySelector("button[id=addNewButton]").addEventListener("click", function () {
+    //get input from popup
+    let newTask = document.getElementById("newTaskText");
     console.log("You clicked New");
 
     //create new list item
     let listItem = document.createElement("li");
-    //add newTask user input
-    listItem.innerHTML = '<input name="box" type="checkbox"></input>' + newTask;
-
+    //add user input from DOM using .value turning it into a string
+    listItem.innerHTML = '<input name="box" type="checkbox"></input>' + newTask.value;
     //add new task to bottom of itemList
     let itemsList = document.getElementById("itemsList");
     itemsList.appendChild(listItem);
+    //close popup
+    popup.classList.remove("open-popup");
+    // clear the text area ater submitting
+    newTask.value = ("");
+
 });
+
+
+
+
 //----------------------set up local storage------------------//
 
 //store li items in tasks
