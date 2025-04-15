@@ -16,10 +16,22 @@ document.getElementById("clear").addEventListener("click", function () {
 
 });
 //create and add to do item *ADD PROMPT FOR ITEM NAME/DESCRIPTION
+
+
+
+
+//Listen for New Button CLick
 document.querySelector("button[id=new]").addEventListener("click", function () {
     //prompt user for new task
+
+
+
+
+
+
     let newTask = window.prompt("New Task");
     console.log("You clicked New");
+
     //create new list item
     let listItem = document.createElement("li");
     //add newTask user input
