@@ -84,6 +84,12 @@ header {
     word-wrap: inherit;
 }
 
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .popup {
     display: flex;
     flex-direction: column;

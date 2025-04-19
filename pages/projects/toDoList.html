@@ -30,24 +30,26 @@
 
     <div class="buttonsContainer">
         <button class="button" id="new" label="new">New</button>
-        <button class="button" id="button2" label="button3">placeholder</button>
+        <button class="button" id="selectAll" label="selectAll">Select All</button>
         <button class="button" id="clear" label="button3">Remove</button>
     </div>
+
     <div class="popup" id="popup">
         <img id="addNewTaskIMG" src="/img/scrollQuillSmallWEBP.webp">
 
-        <textarea class="textAreaInput" id="newTaskText" placeholder="Add New Task" required></textarea>
+        <form id="taskForm">
+            <textarea class="textAreaInput" id="newTaskText" placeholder="Add New Task" required></textarea>
+            <button type="submit" class="button" id="addNewButton">Submit</button>
+        </form>
 
-        <button type="submit" class="button" id="addNewButton">Submit</button>
     </div>
+
     <div class="toDoContainer">
         <div class="toDoList">
             <ul id="itemsList" class="itemsList">
             </ul>
         </div>
     </div>
-
-
 
     <footer>
 

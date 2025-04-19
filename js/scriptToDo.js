@@ -15,12 +15,30 @@ document.getElementById("clear").addEventListener("click", function () {
     });
 
 });
-//Pop Up for New List Item
+
+//select all check boxes
+document.getElementById('selectAll').addEventListener('click', function () {
+    let checkboxes = document.querySelectorAll("input[name=box]");
+
+    console.log('you selected all');
+
+    checkboxes.forEach(checkbox => {
+        let listItem = checkbox.closest('li');
+        if (listItem) {
+            checkbox.checked = true;
+        }
+    });
+
+});
+
+
+
+
 //Listen for New Button CLick open pop up and prompt user for new task
 document.querySelector("button[id=new]").addEventListener("click", function () {
 
-    popup.classList.add("open-popup");
-
+    popup.classList.add('open-popup');
+    document.getElementById('newTaskText').focus();
 });
 
 //listen for submit button and add task to list
@@ -28,7 +46,11 @@ document.querySelector("button[id=addNewButton]").addEventListener("click", func
     //get input from popup
     let newTask = document.getElementById("newTaskText");
     console.log("You clicked New");
-
+    //validate
+    if (!newTask.checkValidity()) {
+        newTask.reportValidity();
+        return;
+    };
     //create new list item
     let listItem = document.createElement("li");
     //add user input from DOM using .value turning it into a string
@@ -42,7 +64,6 @@ document.querySelector("button[id=addNewButton]").addEventListener("click", func
     newTask.value = ("");
 
 });
-
 //----------------------set up local storage------------------//
 
 //store li items in tasks
