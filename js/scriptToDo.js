@@ -16,21 +16,23 @@ document.getElementById("clear").addEventListener("click", function () {
 
 });
 
+
+
 //select all check boxes
+let isAllSelected = false;
+
 document.getElementById('selectAll').addEventListener('click', function () {
     let checkboxes = document.querySelectorAll("input[name=box]");
-
-    console.log('you selected all');
-
+    isAllSelected = !isAllSelected;
     checkboxes.forEach(checkbox => {
-        let listItem = checkbox.closest('li');
-        if (listItem) {
-            checkbox.checked = true;
+        checkbox.checked = isAllSelected;
+        if (isAllSelected === false) {
+            this.innerHTML = 'Select All';
+        } else {
+            this.innerHTML = 'Deselect All'
         }
     });
-
 });
-
 
 
 
