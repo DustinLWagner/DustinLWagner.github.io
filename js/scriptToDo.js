@@ -34,8 +34,6 @@ document.getElementById('selectAll').addEventListener('click', function () {
     });
 });
 
-
-
 //Listen for New Button CLick open pop up and prompt user for new task
 document.querySelector("button[id=new]").addEventListener("click", function () {
 
@@ -44,7 +42,8 @@ document.querySelector("button[id=new]").addEventListener("click", function () {
 });
 
 //listen for submit button and add task to list
-document.querySelector("button[id=addNewButton]").addEventListener("click", function () {
+document.querySelector("button[id=addNewButton]").addEventListener("click", function (e) {
+    e.preventDefault();
     //get input from popup
     let newTask = document.getElementById("newTaskText");
     console.log("You clicked New");
