@@ -1,42 +1,49 @@
+let tasks = [];
+try {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (Array.isArray(storedTasks)) {
+        tasks = storedTasks;
+    }
+} catch (e) {
+    console.warn("Failed to Load Tasks. Resetting");
+}
+
+const itemsList = document.getElementById("itemsList");
+tasks.forEach(task => addTaskToDOM(task.text, task.checked));
+
 //clear checked list item
 document.getElementById("clear").addEventListener("click", function () {
     console.log("You clicked Clear");
 
     //get all check boxes 
     let checkboxes = document.querySelectorAll("input[name=box]:checked");
-
     checkboxes.forEach(checkbox => {
         //find checked li
         let listItem = checkbox.closest("li");
         //remove checked li
         if (listItem) {
+            const text = listItem.textContent.trim();
+            tasks = tasks.filter(task => task.text !== text);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             listItem.remove();
         }
     });
-
 });
-
-
 
 //select all check boxes
 let isAllSelected = false;
-
 document.getElementById('selectAll').addEventListener('click', function () {
     let checkboxes = document.querySelectorAll("input[name=box]");
     isAllSelected = !isAllSelected;
     checkboxes.forEach(checkbox => {
         checkbox.checked = isAllSelected;
-        if (isAllSelected === false) {
-            this.innerHTML = 'Select All';
-        } else {
-            this.innerHTML = 'Deselect All'
-        }
     });
+    //toggle inner text of button
+    this.innerHTML = isAllSelected ? 'Deselect All' : 'Select All';
 });
 
 //Listen for New Button CLick open pop up and prompt user for new task
 document.querySelector("button[id=new]").addEventListener("click", function () {
-
     popup.classList.add('open-popup');
     document.getElementById('newTaskText').focus();
 });
@@ -46,66 +53,33 @@ document.querySelector("button[id=addNewButton]").addEventListener("click", func
     e.preventDefault();
     //get input from popup
     let newTask = document.getElementById("newTaskText");
-    console.log("You clicked New");
-    //validate
     if (!newTask.checkValidity()) {
         newTask.reportValidity();
         return;
     };
-    //create new list item
-    let listItem = document.createElement("li");
-    //add user input from DOM using .value turning it into a string
-    listItem.innerHTML = '<input name="box" type="checkbox"></input>' + newTask.value;
-    //add new task to bottom of itemList
-    let itemsList = document.getElementById("itemsList");
-    itemsList.appendChild(listItem);
-    //close popup
+
+    const taskText = newTask.value.trim();
+    if (!taskText) return;
+    //add to local storage
+    tasks.push({ text: taskText, checked: false });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    //add to dom
+    addTaskToDOM(taskText, false);
+
+    //close popup andclear the text area
     popup.classList.remove("open-popup");
-    // clear the text area ater submitting
     newTask.value = ("");
-
-});
-//----------------------set up local storage------------------//
-
-//store li items in tasks
-let tasks = [];
-let itemsList = document.querySelectorAll("#itemsList li");
-itemsList.forEach(item => {
-    tasks.push(item.innerText);
-});
-localStorage.setItem("tasks", JSON.stringify(tasks));
-
-//check local storage for tasks
-let storedTasks = JSON.parse(localStorage.getItem("tasks"));
-if (storedTasks === null) {
-    console.log("List Empty")
-} else {
-    console.log("has items")
-    //if task exists iterate through and create list items for each
-};
-
-//When the user adds a task via the prompt, save that task in localStorage
-//Append the new task as a list item on the page.
-
-//user checks box and clicks "clear" remove the corresponding task from both the page and localStorage.
-
-//save task Convert your list of tasks to a string format (e.g., JSON.stringify) and store it in localStorage.
-
-//retrieve task localStorage.getItem() to retrieve the list
-
-
-
-
-
-
-//report to console Checked and Unchecked
-document.getElementById("itemsList").addEventListener("change", function (event) {
-    if (event.target && event.target.name === "box") {
-        if (event.target.checked) {
-            console.log("checked box");
-        } else {
-            console.log("unchecked box");
-        }
-    };
 });
 
+//adding task to dom
+function addTaskToDOM(taskText, isChecked) {
+    let listItem = document.createElement("li");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "box";
+    checkbox.checked = isChecked;
+
+    listItem.appendChild(checkbox);
+    listItem.append(" " + taskText);
+    itemsList.appendChild(listItem);
+}
