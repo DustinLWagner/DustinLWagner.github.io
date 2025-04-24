@@ -94,6 +94,11 @@ header {
 
 }
 
+.proj-box-3 {
+    height: 75%;
+    width: 75%;
+}
+
 
 .item-row {
     display: flex;
