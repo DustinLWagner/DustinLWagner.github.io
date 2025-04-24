@@ -90,4 +90,10 @@ body {
     text-align: center;
 }
 
-.weatherData {}
+.msg {
+    padding: 35px 5px;
+}
+
+.weatherData {
+    background-color: rgba(240, 255, 255, 0.24);
+}
