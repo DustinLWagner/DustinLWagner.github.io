@@ -56,18 +56,27 @@ body {
 
 .mainContainer {
     display: flex;
-}
-
-.locationBox {
-    flex: auto;
     justify-content: center;
     align-items: center;
     padding-left: 10vw;
+    padding-right: 10vw;
+    height: calc(100vh - 200px);
 }
 
+.locationBox,
 .weatherBox {
     flex: auto;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-right: 10vw;
+    background-color: rgba(44, 30, 126, 0.5);
+    border: 1px solid rgba(4, 191, 224, 0.3);
+    border-radius: 10px;
 }
+
+::placeholder {
+    text-align: center;
+}
+
+.weatherData {}
