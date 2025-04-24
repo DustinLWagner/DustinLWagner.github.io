@@ -50,12 +50,13 @@ header {
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    color: aliceblue;
 
 }
 
 .mainContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: 10vw;
@@ -78,8 +79,8 @@ body {
 #zipSubmit {
     margin-top: 1.2rem;
     background-color: rgba(4, 191, 224);
-    border: 1px solid rgba(4, 191, 224, 0.3);
-    color: #fff;
+    border: 1px solid rgba(44, 30, 126, 1);
+    color: aliceblue;
     padding: 7px 5px;
     border-radius: 0.375rem;
     margin: 10px;
@@ -96,4 +97,8 @@ body {
 
 .weatherData {
     background-color: rgba(240, 255, 255, 0.24);
+}
+
+h2 {
+    margin: 10px;
 }
