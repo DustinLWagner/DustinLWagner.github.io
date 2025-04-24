@@ -16,11 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const countryCode = 'us';
         const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${countryCode}&appid=${apiKey}`;
         console.log('Zip code entered:', zip);
-        fetch(url);
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
 
     });
 });
-
-
-
 
