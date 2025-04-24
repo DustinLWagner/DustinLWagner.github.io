@@ -1,0 +1,73 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#04bfe0, #2c1e7e);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+header {
+    height: auto;
+    padding-bottom: 5%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+.nav-bar a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 30%;
+    color: aliceblue;
+    font-weight: 0;
+    font-size: large;
+    transition: ease all 0.5s;
+}
+
+.nav-bar a:hover {
+    background-color: #ffffff00;
+    transform: scale(1.5);
+
+}
+
+.nav-bar li {
+    display: inline-flex;
+    justify-content: center;
+    width: 16%;
+
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+
+}
+
+.mainContainer {
+    display: flex;
+}
+
+.locationBox {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10vw;
+}
+
+.weatherBox {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10vw;
+}
