@@ -30,12 +30,15 @@
     <div class="mainContainer">
         <div class="locationBox">
             <h2> Get Your Weather Today </h2>
-            <input type="text" placeholder="Enter Zipcode">
+            <input type="text" id="zip" placeholder="Enter Zipcode" autofocus />
+            <button type="submit" id="zipSubmit">Submit</button>
+
         </div>
 
 
         <div class="weatherBox">
             <h2> weather data displays here </h2>
+            <span class="msg"></span>
             <div class="weatherData">
                 <img src="/img/checkWebp.webp">
             </div>
