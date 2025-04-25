@@ -6,6 +6,7 @@ body {
     background: linear-gradient(#04bfe0, #2c1e7e);
     background-size: auto;
     background-repeat: no-repeat;
+
 }
 
 header {
@@ -61,7 +62,7 @@ body {
     align-items: center;
     padding-left: 10vw;
     padding-right: 10vw;
-    padding-top: 20vh;
+    padding-top: 10vh;
 }
 
 .locationBox,
@@ -78,7 +79,7 @@ body {
 }
 
 .weatherBox {
-    visibility: visible;
+    visibility: hidden;
     transform: translate(-0%, -0%) scale(0.001);
     transition: transform 10s, bottom 10s;
 }
