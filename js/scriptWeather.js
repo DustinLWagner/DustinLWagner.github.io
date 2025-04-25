@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const directions = ['↓ North', '↙ NE', '← East', '↖ SE', '↑ South', '↗ SW', '→ West', '↘ NW'];
                     return directions[Math.round(angle / 45) % 8];
                 };
+                //catch bad input that passes regex    
+                if (data.cod !== 200) {
+                    msg.innerText = "Could not find weather for that zipcode, Please check and try again!";
+                    return;
+                }
+
                 // get data from api response    
                 let city = document.getElementById('city');
                 let temp = Math.trunc(data.main.temp);
