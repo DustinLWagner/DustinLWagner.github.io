@@ -25,15 +25,20 @@
     </header>
     <div class="mainContainer">
         <div class="locationBox">
-            <h2> Get Your Weather Today </h2>
+
             <input type="text" id="zip" placeholder="Enter Zipcode" autofocus />
             <button type="submit" id="zipSubmit">Submit</button>
+
         </div>
-        <div class="weatherBox">
-            <h2> Current Weather </h2>
+
+
+
+        <div class="weatherBox" id="weatherBox">
+            <h2 id="city"></h2>
             <div class="weatherData">
                 <img id="weatherPic">
             </div>
+            <sub id="temps"></sub>
             <span class="msg"></span>
         </div>
     </div>
